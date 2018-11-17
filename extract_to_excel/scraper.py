@@ -14,7 +14,7 @@ html = urlopen(url)
 # function for parsing the html
 soup = BeautifulSoup(html, 'lxml')
 
-# navigating to the desired data contained in the tbody
+# navigating to the desired data contained in the tbody tag
 tbody = soup('table', {'class': 'wikitable plainrowheaders sortable'})[0].find_all('tr')
 for row in tbody:
     cols = row.findChildren(recursive=False)
